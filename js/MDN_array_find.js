@@ -119,7 +119,7 @@ function countup(n) {
 
     else {
         console.log("call countup");
-        var countArray =[];
+        var countArray = [];
         console.log(countArray);
         console.log("init countarray");
         countArray = countup(n - 1);
@@ -149,14 +149,29 @@ function countup(n) {
 //Only change code below this line
 function countdown(n) {
     if (n < 1) {
-      return [];
+        return [];
     }
-  
+
     const arr = countdown(n - 1);
     arr.unshift(n);
     return arr;
-  }
-  
-  
-  console.log(countdown(5)); // [5, 4, 3, 2, 1]
-  
+}
+
+
+//console.log(countdown(5)); // [5, 4, 3, 2, 1]
+
+
+
+
+function rangeOfNumbers(startNum, endNum) {
+    if (endNum < startNum) {
+        return [];
+    }  
+        var arr = rangeOfNumbers(startNum, endNum - 1);
+        arr.push(endNum);
+        return arr; 
+}
+
+
+
+console.log(rangeOfNumbers(4, 4));
