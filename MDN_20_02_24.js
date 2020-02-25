@@ -1,13 +1,24 @@
 $(document).ready(function () {
 
-    function findElement(arr, func) {
-        let num = 0;
-        return num;
+
+
+
+    function chunkArrayInGroups(arr, size) {
+
+        let ret = [];
+
+        for (let index = 0; index < arr.length;) {
+            // console.log(arr[index]);
+            ret.push(arr.slice(index, index + size))
+            index = index + size;
+        }
+
+        console.log(ret);
+
+        // Break it up.
+        return ret;
     }
 
-    findElement([1, 2, 3, 4], num => num % 2 === 0);
+    chunkArrayInGroups(["a", "b", "c", "d"], 2)
 
-
-
-
-});
+})
